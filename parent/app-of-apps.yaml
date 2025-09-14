@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/C5047433/app-of-apps/edit/main/parent/app-of-apps.yaml
+    repoURL: https://github.com/C5047433/app-of-apps.git
     targetRevision: main
     path: parent
 
@@ -15,7 +15,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argocd
 
-  SyncPolicy: 
+  syncPolicy: 
     automated:
       selfHeal: true
       prune: true
