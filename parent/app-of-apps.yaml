@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
 
-  spec:
-    source: https://github.com/C5047433/app-of-apps/edit/main/parent/app-of-apps.yaml
+  source:
+    repoURL: https://github.com/C5047433/app-of-apps/edit/main/parent/app-of-apps.yaml
     targetRevision: main
     path: parent
 
