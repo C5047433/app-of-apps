@@ -1,1 +1,24 @@
-check
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+spec:
+  project: default
+
+  spec:
+    source: https://github.com/C5047433/app-of-apps/edit/main/parent/app-of-apps.yaml
+    targetRevision: main
+    path: parent
+
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  SyncPolicy: 
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions: 
+      - CreateNamespace=true
+  
